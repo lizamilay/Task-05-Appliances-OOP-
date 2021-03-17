@@ -33,9 +33,9 @@ public class FileUserDAO implements UserDAO{
 
 			}
 
-			reader.close();
+			reader.close();// метод close  вызывается в finally, а то до него и очередь может не дойти
 
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) {// а вот тут правильно исключения обработаны
 			throw new DAOException(e);
 		} catch (IOException e) {
 			throw new DAOException(e);
