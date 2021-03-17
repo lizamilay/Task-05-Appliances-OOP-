@@ -33,7 +33,9 @@ public class FileFindApplianceDAO implements FindApplianceDAO {
 
 			}
 
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) {// помнишь, мы разбирали, что нельзя просто так гасить исключения - это ошибка кодирования.
+			// вызывающий код, получается, не может ничего сделать, хотя верных данных и не получит
+			// нужно выбратьвать сервисам свое исключения слоя дао
 
 			System.out.println(e.getLocalizedMessage());
 
